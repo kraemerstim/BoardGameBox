@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>BoardGameBoxMaker</_name>
+  <id>de.kraemerstim.laser.board_game_box_maker</id>
+  
+  <param name="page" type="notebook">
+    <page name="page_1" _gui-text="Sizes">
+      <param name="unit" _gui-text="Unit" type="enum">
+        <_item value="mm">mm</_item>
+        <_item value="cm">cm</_item>
+        <_item value="in">in</_item>
+      </param>
+
+      <param name="name" type="description" appearance="header">Size Options</param>
+      <param name="name" type="description">Inner Size</param>
+
+      <param name="inner_height" type="float" precision="2" min="0.0" max="1000000.0" _gui-text="Box height">100.0</param>
+      <param name="inner_width" type="float" precision="2" min="0.0" max="1000000.0" _gui-text="Box width">100.0</param>
+      <param name="inner_depth" type="float" precision="2" min="0.0" max="1000000.0" _gui-text="Box depth">100.0</param>
+
+      <param name="name" type="description" appearance="header">Box Options</param>
+      <param name="cut_percentage" type="int" min="1" max="100" _gui-text="Cut percentage">50</param>
+      <param name="inner_compartment_overlap" type="float" min="0" _gui-text="Inner compartmant overlap">20</param>
+      <param name="wrapper_size" type="float" min="0" _gui-text="Air for wrapper">0.5</param>
+
+      <param name="name" type="description" appearance="header">Material Options</param>
+      <param name="thickness" type="float" precision="2" min="0.0" max="10000.0" _gui-text="Material Thickness">4.0</param>
+      <param name="kerf" type="float" precision="3" min="-3.0" max="10000.0" _gui-text="Beam diameter">0.2</param>
+      <param name="spaceing" type="float" precision="2" min="0.0" max="10000.0" _gui-text="Space Between Parts">1.0</param>
+
+      <param name="name" type="description" appearance="header">Visual Options</param>
+      <param name="labels" type="boolean" _gui-text="Generate Labels">true</param>
+    </page>
+  </param>
+  
+  <effect>
+    <object-type>all</object-type>
+    <effects-menu>
+      <submenu _name="Laser Tools" />
+    </effects-menu>
+  </effect>
+  <script>
+    <command reldir="extensions" interpreter="python">tim_game_box.py</command>
+  </script>
+</inkscape-extension> 
